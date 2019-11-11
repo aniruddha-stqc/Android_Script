@@ -398,8 +398,8 @@ def search_addjavascriptinterface():
 def search_serialization():
     globals.write_to_file("START OF: Execution log for V6.8\n", "logs/log_v6.8.txt")
     #os.system( "echo '\nSTART OF: Execution log for V6.8\n' > logs/log_v6.8.txt")
-    search_generic(".java","Serializable", 'logs/log_v6.8.txt')
-    search_generic(".java","Parcelable", 'logs/log_v6.8.txt')
+    search_generic(".java","implements Serializable", 'logs/log_v6.8.txt')
+    search_generic(".java","implements Parcelable", 'logs/log_v6.8.txt')
     #os.system( "echo '\nEND OF: Execution log for V6.8\n' >> logs/log_v6.8.txt")
     globals.write_to_file("\nEND OF: Execution log for V6.8\n", "logs/log_v6.8.txt")
     print("Completed V6.8 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")

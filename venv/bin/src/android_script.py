@@ -14,6 +14,7 @@ DATE            VERSION       MODIFIED BY             REMARKS
 25-Feb-2019     1.2           Aniruddha               Modified APKSIGNER code
 04-Mar-2019     1.3           Aniruddha               Added command line options
 07-Mar-2019     1.4           Aniruddha               Added exception handlers for file opening
+11-Nov-2019     1.5           Aniruddha               Search for Serializable / Parcelable optimized
 """
 
 import analyze_apk
