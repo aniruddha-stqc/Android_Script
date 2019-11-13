@@ -15,6 +15,7 @@ DATE            VERSION       MODIFIED BY             REMARKS
 04-Mar-2019     1.3           Aniruddha               Added command line options
 07-Mar-2019     1.4           Aniruddha               Added exception handlers for file opening
 11-Nov-2019     1.5           Aniruddha               Search for Serializable / Parcelable optimized
+13-Nov-2019     1.6           Aniruddha               Optimized onReceive search
 """
 
 import analyze_apk

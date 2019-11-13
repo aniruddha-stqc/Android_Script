@@ -304,7 +304,7 @@ def search_x509_validation():
 def search_ipc_input():
     globals.write_to_file("START OF: Execution log for V6.2\n", "logs/log_v6.2.txt")
     #os.system( "echo '\nSTART OF: Execution log for V6.2\n' > logs/log_v6.2.txt")
-    search_generic(".java","onReceive", 'logs/log_v6.2.txt')
+    search_generic(".java"," onReceive(", 'logs/log_v6.2.txt')
     search_generic(".java","registerReceiver", 'logs/log_v6.2.txt')
     search_generic(".java","GPS", 'logs/log_v6.2.txt')
     search_generic(".java","PendingIntent", 'logs/log_v6.2.txt')
