@@ -18,6 +18,7 @@ DATE            VERSION       MODIFIED BY             REMARKS
 13-Nov-2019     1.6           Aniruddha               Optimized onReceive search
 27-Nov-2019     1.7           Aniruddha               Removed some os.command calls
 27-Nov-2019     1.8           Aniruddha               Log the identification hashes to xlsx
+27-Nov-2019     1.9           Aniruddha               Autodetect linux
 
 """
 
@@ -80,9 +81,12 @@ def analyze_target():
 #Parse arguments
 #**************************************************************************
 def parse_arguments(p_argv):
+    # Running on Linux system
+    globals.gv_linux = "Linux" in os.uname()
+
     try:
         # Specify the options
-        opts, args = getopt.getopt(p_argv, 'a:c:l:h', ['apk=', 'code=', 'linux','help'])
+        opts, args = getopt.getopt(p_argv, 'a:c:h', ['apk=', 'code=','help'])
     except getopt.GetoptError:
         # Help text for exception cases
         print("android_script --help")
@@ -99,9 +103,6 @@ def parse_arguments(p_argv):
         elif opt in ('-c', '--code'):
             # Path to APK
             globals.gv_path_to_code_folder = arg
-        elif opt in ('-l', '--linux'):
-            #Running on Linux system
-            globals.gv_linux = True
     # Base path
     globals.gv_path_to_base = os.path.commonprefix([globals.gv_path_to_apk_file, globals.gv_path_to_code_folder])
     # Path to apksigner
