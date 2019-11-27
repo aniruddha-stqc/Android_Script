@@ -18,7 +18,7 @@ DATE            VERSION       MODIFIED BY             REMARKS
 13-Nov-2019     1.6           Aniruddha               Optimized onReceive search
 27-Nov-2019     1.7           Aniruddha               Removed some os.command calls
 27-Nov-2019     1.8           Aniruddha               Log the identification hashes to xlsx
-27-Nov-2019     1.9           Aniruddha               Autodetect linux
+27-Nov-2019     1.9           Aniruddha               Autodetect linux and add basic GUI
 
 """
 
