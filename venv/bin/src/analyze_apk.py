@@ -19,8 +19,6 @@ def apksigner():
     command = globals.gv_path_to_apksigner + " verify --verbose " + "\"" + globals.gv_path_to_apk_file + "\""
     #Collect result
     result = subprocess.check_output(command, shell=True).decode(sys.stdout.encoding)
-    #command = command + " >> logs/log_v7.1.txt"
-    #os.system(command)
     #write output to file
     globals.write_to_file(result, "logs/log_v7.1.txt")
     globals.write_to_file("\nEND OF: Execution log for V7.1\n", "logs/log_v7.1.txt")
@@ -49,10 +47,10 @@ def objdump():
     for root, dirs, files in os.walk(lv_directory_to_extract_to):
         for file in files:
             if file.endswith(".so"):
-              os.system("echo " + os.path.relpath(os.path.join(root, file), lv_directory_to_extract_to ) + " >> logs/log_v7.3.txt")
+                globals.write_to_file("\n" + os.path.relpath(os.path.join(root, file), lv_directory_to_extract_to ), "logs/log_v7.3.txt")
 
     #Execute 'objdump' command on shared objects
-    os.system( "echo '\nFollowing debug symbols were found:' >> logs/log_v7.3.txt")
+    globals.write_to_file("\n\nFollowing debug symbols were found:\n", "logs/log_v7.3.txt")
     for root, dirs, files in os.walk(lv_directory_to_extract_to):
         for file in files:
             if file.endswith(".so"):
@@ -60,7 +58,6 @@ def objdump():
                  os.system(command)
 
     os.system("rm -r " + lv_directory_to_extract_to )
-    #os.system( "echo '\nEND OF: Execution log for V7.3\n' >> logs/log_v7.3.txt")
     globals.write_to_file("\nEND OF: Execution log for V7.3\n", "logs/log_v7.3.txt")
     print("Completed V7.3 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 

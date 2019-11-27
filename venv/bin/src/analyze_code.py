@@ -64,7 +64,6 @@ def search_generic(file_type_to_search, text_to_find, file_to_write):
 #**************************************************************************
 def search_storage():
     globals.write_to_file("START OF: Execution log for V2.1\n", "logs/log_v2.1.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V2.1\n' > logs/log_v2.1.txt")
     search_generic(".java","SharedPreferences ", 'logs/log_v2.1.txt')
     search_generic(".java","getSharedPreferences", 'logs/log_v2.1.txt')
     search_generic(".java","MODE_WORLD_READABLE", 'logs/log_v2.1.txt')
@@ -79,7 +78,6 @@ def search_storage():
     search_generic(".java","getCacheDir", 'logs/log_v2.1.txt')
     search_generic(".java","getExternalCacheDirs", 'logs/log_v2.1.txt')
     search_generic(".java","KeyStore", 'logs/log_v2.1.txt')
-    #os.system( "echo '\nEND OF: Execution log for V2.1\n' >> logs/log_v2.1.txt")
     globals.write_to_file("\nEND OF: Execution log for V2.1\n", "logs/log_v2.1.txt")
     print("Completed V2.1 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -92,7 +90,6 @@ def search_storage():
 #**************************************************************************
 def search_logging():
     globals.write_to_file("START OF: Execution log for V2.2\n", "logs/log_v2.2.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V2.2\n' > logs/log_v2.2.txt")
     search_generic(".java","Log.d", 'logs/log_v2.2.txt')
     search_generic(".java","Log.e", 'logs/log_v2.2.txt')
     search_generic(".java","Log.i", 'logs/log_v2.2.txt')
@@ -109,7 +106,6 @@ def search_logging():
     search_generic(".java","System.err.print", 'logs/log_v2.2.txt')
     globals.write_to_file("\nEND OF: Execution log for V2.2\n", "logs/log_v2.2.txt")
     print("Completed V2.2 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
-    #os.system( "echo '\nEND OF: Execution log for V2.2\n' >> logs/log_v2.2.txt")
 #**************************************************************************
 #OWASP MASVS v1.0 point 2.4
 #Cheat Sheet:
@@ -120,12 +116,10 @@ def search_logging():
 #**************************************************************************
 def search_keyboard_cache():
     globals.write_to_file("START OF: Execution log for V2.4\n", "logs/log_v2.4.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V2.4\n' > logs/log_v2.4.txt")
     globals.write_to_file("START OF: Execution log for V2.2\n", "logs/log_v2.2.txt")
     os.system( "echo '\nIMPORTANT: Best tested on Real Device\n' >> logs/log_v2.4.txt")
     search_generic(".xml","textPassword", 'logs/log_v2.5.txt')
     search_generic(".xml","textNoSuggestions", 'logs/log_v2.4.txt')
-    #os.system( "echo '\nEND OF: Execution log for V2.4\n' >> logs/log_v2.4.txt")
     globals.write_to_file("\nEND OF: Execution log for V2.4\n", "logs/log_v2.4.txt")
     print("Completed V2.4 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -139,12 +133,10 @@ def search_keyboard_cache():
 #**************************************************************************
 def search_clipboard():
     globals.write_to_file("START OF: Execution log for V2.5\n", "logs/log_v2.5.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V2.5\n' > logs/log_v2.5.txt")
     globals.write_to_file("START OF: Execution log for V2.2\n", "logs/log_v2.2.txt")
     os.system( "echo '\nIMPORTANT: Best tested on Real Device\n' >> logs/log_v2.5.txt")
     search_generic(".xml","textPassword", 'logs/log_v2.5.txt')
     search_generic(".xml","longClickable", 'logs/log_v2.5.txt')
-    #os.system( "echo '\nEND OF: Execution log for V2.5\n' >> logs/log_v2.5.txt")
     globals.write_to_file("\nEND OF: Execution log for V2.5\n", "logs/log_v2.5.txt")
     print("Completed V2.5 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -158,11 +150,9 @@ def search_clipboard():
 #**************************************************************************
 def search_masking():
     globals.write_to_file("START OF: Execution log for V2.7\n", "logs/log_v2.7.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V2.7\n' > logs/log_v2.7.txt")
     globals.write_to_file("START OF: Execution log for V2.2\n", "logs/log_v2.2.txt")
     os.system( "echo '\nIMPORTANT: Best tested on Real Device\n' >> logs/log_v2.7.txt")
     search_generic(".xml","textPassword", 'logs/log_v2.7.txt')
-    #os.system( "echo '\nEND OF: Execution log for V2.7\n' >> logs/log_v2.7.txt")
     globals.write_to_file("\nEND OF: Execution log for V2.7\n", "logs/log_v2.7.txt")
     print("Completed V2.7 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -201,7 +191,6 @@ def search_hardcode_keys():
 #**************************************************************************
 def search_old_algos():
     globals.write_to_file("START OF: Execution log for V3.3\n", "logs/log_v3.3.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V3.3\n' > logs/log_v3.3.txt")
     search_generic(".java","DES", 'logs/log_v3.3.txt')
     search_generic(".java","3DES", 'logs/log_v3.3.txt')
     search_generic(".java","RC2", 'logs/log_v3.3.txt')
@@ -212,7 +201,6 @@ def search_old_algos():
     search_generic(".java","SHA", 'logs/log_v3.3.txt')
     search_generic(".java","SHA1", 'logs/log_v3.3.txt')
     search_generic(".java","hashCode", 'logs/log_v3.3.txt')
-    #os.system( "echo '\nEND OF: Execution log for V3.3\n' >> logs/log_v3.3.txt")
     globals.write_to_file("\nEND OF: Execution log for V3.3\n", "logs/log_v3.3.txt")
     print("Completed V3.3 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -226,9 +214,7 @@ def search_old_algos():
 #**************************************************************************
 def search_random():
     globals.write_to_file("START OF: Execution log for V3.6\n", "logs/log_v3.6.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V3.6\n' > logs/log_v3.6.txt")
     search_generic(".java","Random", 'logs/log_v3.6.txt')
-    #os.system( "echo '\nEND OF: Execution log for V3.6\n' >> logs/log_v3.6.txt")
     globals.write_to_file("\nEND OF: Execution log for V3.6\n", "logs/log_v3.6.txt")
     print("Completed V3.6 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -243,9 +229,7 @@ def search_random():
 #**************************************************************************
 def search_authentication():
     globals.write_to_file("START OF: Execution log for V4.1\n", "logs/log_v4.1.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V4.1\n' > logs/log_v4.1.txt")
     search_generic(".java","OTP", 'logs/log_v4.1.txt')
-    #os.system( "echo '\nEND OF: Execution log for V4.1\n' >> logs/log_v4.1.txt")
     globals.write_to_file("\nEND OF: Execution log for V4.1\n", "logs/log_v4.1.txt")
     print("Completed V4.1 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -278,7 +262,6 @@ def search_transport():
 #**************************************************************************
 def search_x509_validation():
     globals.write_to_file("START OF: Execution log for V5.3\n", "logs/log_v5.3.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V5.3\n' > logs/log_v5.3.txt")
     search_generic(".java","SSLSocketFactory", 'logs/log_v5.3.txt')
     search_generic(".java","X509TrustManager", 'logs/log_v5.3.txt')
     search_generic(".java","getAcceptedIssuers", 'logs/log_v5.3.txt')
@@ -288,7 +271,6 @@ def search_x509_validation():
     search_generic(".java","handler.proceed", 'logs/log_v5.3.txt')
     search_generic(".java","HostnameVerifier", 'logs/log_v5.3.txt')
     search_generic(".java","ALLOW_ALL_HOSTNAME_VERIFIER", 'logs/log_v5.3.txt')
-    #os.system( "echo '\nEND OF: Execution log for V5.3\n' >> logs/log_v5.3.txt")
     globals.write_to_file("\nEND OF: Execution log for V5.3\n", "logs/log_v5.3.txt")
     print("Completed V5.3 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -303,12 +285,10 @@ def search_x509_validation():
 #**************************************************************************
 def search_ipc_input():
     globals.write_to_file("START OF: Execution log for V6.2\n", "logs/log_v6.2.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V6.2\n' > logs/log_v6.2.txt")
     search_generic(".java"," onReceive(", 'logs/log_v6.2.txt')
     search_generic(".java","registerReceiver", 'logs/log_v6.2.txt')
     search_generic(".java","GPS", 'logs/log_v6.2.txt')
     search_generic(".java","PendingIntent", 'logs/log_v6.2.txt')
-    #os.system( "echo '\nEND OF: Execution log for V6.2\n' >> logs/log_v6.2.txt")
     globals.write_to_file("\nEND OF: Execution log for V6.2\n", "logs/log_v6.2.txt")
     print("Completed V6.2 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -323,14 +303,12 @@ def search_ipc_input():
 #**************************************************************************
 def search_ipc_output():
     globals.write_to_file("START OF: Execution log for V6.4\n", "logs/log_v6.4.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V6.4\n' > logs/log_v6.4.txt")
     search_generic(".java","Notification", 'logs/log_v6.4.txt')
     search_generic(".java","NotificationManager", 'logs/log_v6.4.txt')
     search_generic(".java","sendBroadcast", 'logs/log_v6.4.txt')
     search_generic(".java","sendOrderedBroadcast", 'logs/log_v6.4.txt')
     search_generic(".java","sendStickyBroadcast", 'logs/log_v6.4.txt')
     search_generic(".java","sendStickyOrderedBroadcast", 'logs/log_v6.4.txt')
-    #os.system( "echo '\nEND OF: Execution log for V6.4\n' >> logs/log_v6.4.txt")
     globals.write_to_file("\nEND OF: Execution log for V6.4\n", "logs/log_v6.4.txt")
     print("Completed V6.4 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -343,10 +321,8 @@ def search_ipc_output():
 #**************************************************************************
 def search_setJavaScriptEnabled():
     globals.write_to_file("START OF: Execution log for V6.5\n", "logs/log_v6.5.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V6.5\n' > logs/log_v6.5.txt")
     search_generic(".java","WebView", 'logs/log_v6.5.txt')
     search_generic(".java","setJavaScriptEnabled", 'logs/log_v6.5.txt')
-    #os.system( "echo '\nEND OF: Execution log for V6.5\n' >> logs/log_v6.5.txt")
     globals.write_to_file("\nEND OF: Execution log for V6.5\n", "logs/log_v6.5.txt")
     print("Completed V6.5 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -362,12 +338,10 @@ def search_setJavaScriptEnabled():
 #**************************************************************************
 def search_webview_config():
     globals.write_to_file("START OF: Execution log for V6.6\n", "logs/log_v6.6.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V6.6\n' > logs/log_v6.6.txt")
     search_generic(".java","setAllowContentAccess", 'logs/log_v6.6.txt')
     search_generic(".java","setAllowFileAccess", 'logs/log_v6.6.txt')
     search_generic(".java","setAllowFileAccessFromFileURLs", 'logs/log_v6.6.txt')
     search_generic(".java","setAllowUniversalAccessFromFileURLs", 'logs/log_v6.6.txt')
-    #os.system( "echo '\nEND OF: Execution log for V6.6\n' >> logs/log_v6.6.txt")
     globals.write_to_file("\nEND OF: Execution log for V6.6\n", "logs/log_v6.6.txt")
     print("Completed V6.6 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -381,9 +355,7 @@ def search_webview_config():
 #**************************************************************************
 def search_addjavascriptinterface():
     globals.write_to_file("START OF: Execution log for V6.7\n", "logs/log_v6.7.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V6.7\n' > logs/log_v6.7.txt")
     search_generic(".java","addjavascriptinterface", 'logs/log_v6.7.txt')
-    #os.system( "echo '\nEND OF: Execution log for V6.7\n' >> logs/log_v6.7.txt")
     globals.write_to_file("\nEND OF: Execution log for V6.7\n", "logs/log_v6.7.txt")
     print("Completed V6.7 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -397,10 +369,8 @@ def search_addjavascriptinterface():
 #**************************************************************************
 def search_serialization():
     globals.write_to_file("START OF: Execution log for V6.8\n", "logs/log_v6.8.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V6.8\n' > logs/log_v6.8.txt")
     search_generic(".java","implements Serializable", 'logs/log_v6.8.txt')
     search_generic(".java","implements Parcelable", 'logs/log_v6.8.txt')
-    #os.system( "echo '\nEND OF: Execution log for V6.8\n' >> logs/log_v6.8.txt")
     globals.write_to_file("\nEND OF: Execution log for V6.8\n", "logs/log_v6.8.txt")
     print("Completed V6.8 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -414,13 +384,11 @@ def search_serialization():
 #**************************************************************************
 def search_debugging_code():
     globals.write_to_file("START OF: Execution log for V7.4\n", "logs/log_v7.4.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V7.4\n' > logs/log_v7.4.txt")
     search_generic(".java","debug", 'logs/log_v7.4.txt')
     search_generic(".java","proxy", 'logs/log_v7.4.txt')
     search_generic(".java","test", 'logs/log_v7.4.txt')
     search_generic(".java","uat", 'logs/log_v7.4.txt')
     search_generic(".java","demo", 'logs/log_v7.4.txt')
-    #os.system( "echo '\nEND OF: Execution log for V7.4\n' >> logs/log_v7.4.txt")
     globals.write_to_file("\nEND OF: Execution log for V7.4\n", "logs/log_v7.4.txt")
     print("Completed V7.4 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
@@ -435,10 +403,8 @@ def search_debugging_code():
 #**************************************************************************
 def search_gradle():
     globals.write_to_file("START OF: Execution log for V7.9\n", "logs/log_v7.9.txt")
-    #os.system( "echo '\nSTART OF: Execution log for V7.9\n' > logs/log_v7.9.txt")
     search_generic(".gradle","minifyEnabled", 'logs/log_v7.9.txt')
     search_generic(".gradle","shrinkResources", 'logs/log_v7.9.txt')
-    #os.system( "echo '\nEND OF: Execution log for V7.9\n' >> logs/log_v7.9.txt")
     globals.write_to_file("\nEND OF: Execution log for V7.9\n", "logs/log_v7.9.txt")
     print("Completed V7.9 by: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
 
