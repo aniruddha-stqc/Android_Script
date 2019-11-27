@@ -17,6 +17,8 @@ DATE            VERSION       MODIFIED BY             REMARKS
 11-Nov-2019     1.5           Aniruddha               Search for Serializable / Parcelable optimized
 13-Nov-2019     1.6           Aniruddha               Optimized onReceive search
 27-Nov-2019     1.7           Aniruddha               Removed some os.command calls
+27-Nov-2019     1.8           Aniruddha               Log the identification hashes to xlsx
+
 """
 
 import analyze_apk
@@ -87,7 +89,7 @@ def parse_arguments(p_argv):
         sys.exit(2)
     for opt, arg in opts:
         if opt in ('-h', '--help'):
-            print("script version 1.7 dated 27-Nov-2019")
+            print("script version 1.8 dated 27-Nov-2019")
             # Help text
             print("\nUsage:\nandroid_script --apk <path to apk> --code <path to source folder>")
             sys.exit(2)

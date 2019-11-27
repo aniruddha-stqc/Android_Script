@@ -73,5 +73,5 @@ def identify_target():
                 worksheet.write(excel_row, 1, lv_path)
 
     workbook.close()
-    print("Completed V0.0 by: " + str( (datetime.datetime.now() - gv_time_start ).total_seconds() ) + " seconds")
+    print("Completed hash calculation by: " + str( (datetime.datetime.now() - gv_time_start ).total_seconds() ) + " seconds")
 
