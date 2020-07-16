@@ -1,7 +1,7 @@
-"""
-Created on 24-Oct-2018 by Aniruddha Ghosh
-Maintained at https://github.com/aniruddha-stqc/Android_Script
-"""
+#**************************************************************************
+#Created on 24-Oct-2018 by Aniruddha Ghosh
+#Maintained at https://github.com/aniruddha-stqc/Android_Script
+#**************************************************************************
 
 import analyze_apk
 import datetime
@@ -28,6 +28,8 @@ def analyze_target():
     analyze_code.search_masking()
     #V3.1	Verify that the app does not rely on symmetric cryptography with hardcoded keys
     analyze_code.search_hardcode_keys()
+    #OWASP MASVS v1.0 point 3.2
+    analyze_code.search_algos()
     #V3.3 Verify that the app uses proven implementations of cryptographic primitives.
     analyze_code.search_old_algos()
     #V3.6	Verify that all random values are generated using secure random
@@ -59,6 +61,23 @@ def analyze_target():
     analyze_code.search_debugging_code()
     #V7.9 Free security features offered by the toolchain, such as byte-code minification
     analyze_code.search_gradle()
+    #OWASP MASVS v1.0 point 8.1
+    analyze_code.search_root_detect()
+    #OWASP MASVS v1.0 point 8.2
+    analyze_code.search_anti_debug()
+    #OWASP MASVS v1.0 point 8.3
+    analyze_code.search_integrity_check()
+    #OWASP MASVS v1.0 point 8.4
+    analyze_code.search_reverse_tools()
+    #OWASP MASVS v1.0 point 8.5
+    analyze_code.search_emulator_detect()
+    #OWASP MASVS v1.0 point 8.6
+    analyze_code.search_runtime_integrity()
+    #OWASP MASVS v1.0 point 8.9
+    analyze_code.search_obfuscation()
+    #OWASP MASVS v1.0 point 8.10
+    analyze_code.search_device_bind()
+
 #**************************************************************************
 #Parse arguments
 #**************************************************************************
