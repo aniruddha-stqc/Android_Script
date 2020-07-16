@@ -1,3 +1,7 @@
+# **************************************************************************
+# Created on 24-Oct-2018 by Aniruddha Ghosh
+# Maintained at https://github.com/aniruddha-stqc/Android_Script
+# **************************************************************************
 from tkinter import filedialog
 from tkinter import *
 
