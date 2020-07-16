@@ -1,30 +1,12 @@
 """
-DATE            VERSION       MODIFIED BY             REMARKS
-24-Oct-2018     0.1           Aniruddha               Created Module for OBJDUMP
-25-Oct-2018     0.2           Aniruddha               Created Modules for APKSIGNER
-26-Oct-2018     0.3           Aniruddha               Created Modules for Source Code Searching
-29-Oct-2018     0.4           Aniruddha               Modularized the code for readability
-05-Dec-2018     0.5           Abhishek                Included XML files in hard code search
-10-Jan-2019     0.6           Aniruddha               Replaced "echo to log file" with "Python API"
-11-Jan-2019     0.7           Aniruddha               Added MD5 "Identification Info" and timing info
-21-Jan-2019     0.8           Aniruddha               Added Source code "Identification Info"
-24-Jan-2019     0.9           Aniruddha               Added section v5.1 for http and https
-20-Feb-2019     1.0           Aniruddha               Removed grep. Added python API.
-21-Feb-2019     1.1           Aniruddha               Modified hardcode search. Removed v0.5 sections.
-25-Feb-2019     1.2           Aniruddha               Modified APKSIGNER code
-04-Mar-2019     1.3           Aniruddha               Added command line options
-07-Mar-2019     1.4           Aniruddha               Added exception handlers for file opening
-11-Nov-2019     1.5           Aniruddha               Search for Serializable / Parcelable optimized
-13-Nov-2019     1.6           Aniruddha               Optimized onReceive search
-27-Nov-2019     1.7           Aniruddha               Removed some os.command calls
-27-Nov-2019     1.8           Aniruddha               Log the identification hashes to xlsx
-27-Nov-2019     1.9           Aniruddha               Autodetect linux and add basic GUI
-
+Created on 24-Oct-2018 by Aniruddha Ghosh
+Maintained at https://github.com/aniruddha-stqc/Android_Script
 """
 
 import analyze_apk
 import datetime
 import globals
+import platform
 import os
 import analyze_code
 import shutil
@@ -68,7 +50,7 @@ def analyze_target():
     analyze_code.search_addjavascriptinterface()
     #V6.8 Verify that object serialization, if any, is implemented using safe serialization APIs.
     analyze_code.search_serialization()
-    if globals.gv_linux == True:
+    if globals.gv_linux == True :
         #V7.1	Verify that the app is signed and provisioned with valid certificate.
         analyze_apk.apksigner()
         #V7.3	Verify that debugging symbols have been removed from native binaries.
@@ -82,7 +64,7 @@ def analyze_target():
 #**************************************************************************
 def parse_arguments(p_argv):
     # Running on Linux system
-    globals.gv_linux = "Linux" in os.uname()
+    globals.gv_linux = "Linux" in platform.platform()
 
     try:
         # Specify the options
@@ -120,11 +102,16 @@ def main(p_argv):
         shutil.rmtree("logs")
     #Create a blank logs directory
     os.makedirs("logs")
+    print("----------------------------------------------------------------")
     #Get all Identification info from source code and APK
-    globals.identify_target()
+    globals.identify_target_txt()
+    print("----------------------------------------------------------------")
     #Analyze source and apk
     analyze_target()
+    print("----------------------------------------------------------------")
+    print("Logs folder created at " + os.getcwd())
     print("Total time taken: " + str( (datetime.datetime.now() - globals.gv_time_start ).total_seconds() ) + " seconds")
+    print("----------------------------------------------------------------")
 
 #Call to main function
 if __name__== "__main__":
