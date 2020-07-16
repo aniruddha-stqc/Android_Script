@@ -4,7 +4,7 @@ import os
 import analyze_code
 import analyze_apk
 import getopt
-import xlsxwriter
+#import xlsxwriter
 
 #Global variables
 gv_path_to_base = None
@@ -49,7 +49,28 @@ def calculate_hash(p_file_to_identify):
 #**************************************************************************
 #Calculates MD5 of source code and APK
 #**************************************************************************
-def identify_target():
+def identify_target_txt():
+    write_to_file("START OF: Identification Info\n", "logs/log_v0.0.txt")
+    # Calculate MD5 info of APK
+    lv_hash, lv_path = calculate_hash(gv_path_to_apk_file)
+    
+    write_to_file(lv_hash + " " + lv_path + "\n", "logs/log_v0.0.txt")
+
+    # Calculate MD5 info of Source code files
+    for root, dirs, files in os.walk(gv_path_to_code_folder):
+            for file in files:
+                lv_hash, lv_path = calculate_hash(os.path.join(root, file))
+                write_to_file(lv_hash + " " + lv_path + "\n", "logs/log_v0.0.txt")
+
+    
+    print("Completed hash calculation by: " + str( (datetime.datetime.now() - gv_time_start ).total_seconds() ) + " seconds")
+
+
+
+#**************************************************************************
+#Calculates MD5 of source code and APK
+#**************************************************************************
+def identify_target_xlsx():
     #write_to_file("START OF: Identification Info\n", "logs/log_v0.0.txt")
     workbook = xlsxwriter.Workbook("logs/hash.xlsx")
     worksheet = workbook.add_worksheet("html_checker")
